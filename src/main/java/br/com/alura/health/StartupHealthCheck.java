@@ -6,7 +6,7 @@ import org.eclipse.microprofile.health.HealthCheck;
 import org.eclipse.microprofile.health.HealthCheckResponse;
 import org.eclipse.microprofile.health.Startup;
 
-@Startup
+@Startup // verifica se o aplicativo no contêiner foi iniciado
 @ApplicationScoped
 public class StartupHealthCheck implements HealthCheck {
 
