@@ -25,7 +25,8 @@ public class DatabaseConnectionHealthCheck implements HealthCheck {
             responseBuilder.up();
         } catch (IllegalStateException e) {
             // não acessou o database
-            responseBuilder.down();
+            responseBuilder.down()
+                .withData("error", e.getMessage());
         }
 
         return responseBuilder.build();
